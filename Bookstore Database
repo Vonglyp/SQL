@@ -1,0 +1,22 @@
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, name TEXT, price INTEGER, quantity INTEGER, aisle INTEGER);
+INSERT INTO bookstore VALUES (1, "introduction to chemistry", 200, 4, 17);
+INSERT INTO bookstore VALUES (2, "me before you", 12, 9, 10);
+INSERT INTO bookstore VALUES (3, "brian love me", 50, 1, 10);
+INSERT INTO bookstore VALUES (4, "biochemistry", 250, 3, 17);
+INSERT INTO bookstore VALUES (5, "beginner cook book", 35, 6, 5);
+INSERT INTO bookstore VALUES (6, "food master", 20, 4, 5);
+INSERT INTO bookstore VALUES (7, "brian is the best", 100, 1, 10);
+INSERT INTO bookstore VALUES (8, "microbiology", 200, 4, 17);
+INSERT INTO bookstore VALUES (9, "me before you", 30, 3, 10);
+INSERT INTO bookstore VALUES (10, "travel guide", 15, 5, 5);
+INSERT INTO bookstore VALUES (11, "i love brian", 200, 1, 10);
+INSERT INTO bookstore VALUES (12, "master traveler", 25, 10, 5);
+INSERT INTO bookstore VALUES (13, "bugs life", 20, 8, 9);
+INSERT INTO bookstore VALUES (14, "naruto", 10, 9, 11);
+INSERT INTO bookstore VALUES (15, "hunter x hunter", 15, 8, 11);
+
+SELECT * FROM bookstore;
+
+SELECT * FROM bookstore ORDER BY price;
+
+SELECT SUM (quantity) FROM bookstore
