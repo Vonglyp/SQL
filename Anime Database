@@ -1,0 +1,33 @@
+CREATE TABLE anime_characters (id INTEGER PRIMARY KEY, name TEXT, anime TEXT, season INTEGER);
+
+INSERT INTO anime_characters (name, anime, season) VALUES ("levi", "attack on titan", 3);
+INSERT INTO anime_characters (name, anime, season) VALUES ("luffy", "one piece", 20);
+INSERT INTO anime_characters (name, anime, season) VALUES ("l", "death note", 1);
+INSERT INTO anime_characters (name, anime, season) VALUES ("Zoro", "one piece", 20);
+INSERT INTO anime_characters (name, anime, season) VALUES ("light", "death note", 1);
+INSERT INTO anime_characters (name, anime, season) VALUES("killua", "hunter hunter", 6);
+INSERT INTO anime_characters (name, anime, season) VALUES ("itachi", "naruto", 21);
+INSERT INTO anime_characters (name, anime, season) VALUES ("kakashi", "naruto", 21);
+
+
+CREATE TABLE manga (id INTEGER PRIMARY KEY, author TEXT, manga TEXT);
+
+INSERT INTO manga (author, manga) VALUES ("eiichiro", "one piece");
+INSERT INTO manga (author, manga) VALUES ("hajime", "attack on titan");
+INSERT INTO manga (author, manga) VALUES ("yoshihiro", "hunter hunter");
+INSERT INTO manga (author, manga) VALUES ("tsugumi", "death note");
+INSERT INTO manga (author, manga) VALUES ("masashi", "naruto");
+
+SELECT anime_characters.name, anime_characters.anime, manga.author
+    FROM anime_characters
+    JOIN manga
+    ON anime_characters.anime = manga.manga;
+    
+SELECT anime_characters.name, anime_characters.anime, manga.author
+    FROM anime_characters
+    JOIN manga
+    ON anime_characters.anime = manga.manga
+    GROUP BY author;
+SELECT SUM(SEASON) AS total_season FROM anime_characters; 
+
+SELECT anime, SUM(SEASON) AS total_season FROM anime_characters GROUP BY anime;
